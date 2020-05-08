@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API PHP - Music Spotify</title>
+  <link rel="stylesheet" href="style/app.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="logo-spotify">
+    </div>
+
+    <select name="select_generi">
+			<option value="all">All</option>
+			<option value="pop">Pop</option>
+			<option value="rock">Rock</option>
+			<option value="metal">Metal</option>
+			<option value="jazz">Jazz</option>
+    </select>
+  </header>
+
+
+  <div class="container"></div>
+
+
+
+
+
+  <!-- Template -->
+  <script id="album-template" type="text/x-handlebars-template">
+    <div class="cover" data-genere="{{genere}}">
+      <div class="album">
+        <img src="{{album}}" alt="album" />
+      </div>
+      <div class="description">
+        <h3>{{title}}</h3>
+        <h4>{{author}}</h4>
+        <h4>{{year}}</h4>
+      </div>
+    </div>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
