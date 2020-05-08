@@ -21,7 +21,7 @@ header img {
 
 .container {
   max-width: 750px;
-  margin: 10px auto;
+  margin: 30px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -40,16 +40,16 @@ header img {
 .cover img {
   width: 100%;
 }
-.cover.description {
+.cover .description {
   text-align: center;
   padding-top: 10px;
 }
-.cover.description h3 {
+.cover .description h3 {
   font-size: 15px;
   color: #fff;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-.cover.description h4 {
+.cover .description h4 {
   color: #6c6e71;
 }
