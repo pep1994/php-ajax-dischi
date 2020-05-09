@@ -1,3 +1,6 @@
+
+@import 'variables.scss';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,38 +8,38 @@
 }
 
 body {
-	background-color: #222d3a;
+	background-color: $primary-color;
 }
 
 header {
   background-color: #171413;
-  padding: 5px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  padding: 5px $medium-px;
+  @include flex(space-between, center);
+  
   img {
     width: 60px;
+  }
+
+  #search {
+    outline-color: $primary-color;
+    min-height: 25px;
   }
 }
 
 .container {
 	max-width: 750px;
 	margin: 30px auto;
-	display: flex;
+	@include flex(center, stretch);
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: stretch;
 }
 
 .cover {
-	display: flex;
+	@include flex(flex-start, center);
 	flex-direction: column;
-	align-items: center;
 	flex-basis: calc(100% / 4 - 5%);
-	padding: 15px;
+	padding: $medium-px;
 	margin: 1% 2%;
-  background-color: #313a45;
+  background-color: $secondary-color;
   
     img {
       width: 100%;
@@ -47,9 +50,9 @@ header {
       padding-top: 10px;
 
       h3 {
-       font-size: 15px;
+       font-size: $medium-px;
        color: #fff;
-       margin-bottom: 15px;
+       margin-bottom: $medium-px;
        text-transform: uppercase;
       }
 

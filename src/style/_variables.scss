@@ -1,0 +1,9 @@
+$primary-color: #222d3a;
+$secondary-color: #313a45;
+$medium-px: 15px;
+
+@mixin flex ($principal, $secondary) {
+  display: flex;
+  justify-content: $principal;
+  align-items: $secondary;
+}

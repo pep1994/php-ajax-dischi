@@ -18,20 +18,25 @@ header {
 header img {
   width: 60px;
 }
+header #search {
+  outline-color: #222d3a;
+  min-height: 25px;
+}
 
 .container {
   max-width: 750px;
   margin: 30px auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .cover {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
   flex-basis: calc(100% / 4 - 5%);
   padding: 15px;
   margin: 1% 2%;
