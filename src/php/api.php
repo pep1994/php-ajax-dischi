@@ -4,6 +4,19 @@
 
   require 'db.php';
 
-  echo json_encode($cd);
+  $result = [];
+
+  $name = $_GET['name'];
+
+  foreach ($cds as $cd) {
+    $author = strtolower($cd['author']);
+
+    if (strpos($author, $name) !== false) {
+      $result[] = $cd;
+    }
+
+  }
+  
+  echo json_encode($result);
 
 ?>

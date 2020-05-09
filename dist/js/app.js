@@ -96,37 +96,52 @@
 $(document).ready(init);
 
 function print(array) {
+  $('.container').html("");
   var source = $("#album-template").html();
   var template = Handlebars.compile(source);
-  array.forEach(function (element) {
-    console.log(element);
-    var context = {
-      title: element.title,
-      author: element.author,
-      year: element.year,
-      album: element.poster,
-      genere: element.genre
-    };
-    $('.container').append(template(context));
-  });
-}
 
-function filter() {
-  $('#search').change(function () {});
+  if (array.length > 0) {
+    array.forEach(function (element) {
+      console.log(element);
+      var context = {
+        title: element.title,
+        author: element.author,
+        year: element.year,
+        album: element.poster,
+        genere: element.genre
+      };
+      $('.container').append(template(context));
+    });
+  } else {
+    $('.container').html("<h2>Nessun risultato corrispondente</h2>");
+  }
 }
 
 function init() {
-  $.ajax({
-    method: "GET",
-    url: "../php/api.php",
-    dataType: "json",
-    success: function success(data) {
-      var arrayResult = data;
-      print(arrayResult);
-      filter();
-    },
-    error: function error(_error) {
-      alert(_error);
+  $('#search').keydown(function (e) {
+    console.log(e.keyCode);
+    var searchVal = $('#search').val().toLowerCase();
+    console.log(searchVal.length);
+
+    if (e.keyCode == 13) {
+      if (searchVal.length > 0) {
+        $.ajax({
+          method: "GET",
+          url: "../php/api.php",
+          dataType: "json",
+          data: {
+            name: searchVal
+          },
+          success: function success(data) {
+            console.log(data);
+            var arrayResult = data;
+            print(arrayResult);
+          },
+          error: function error(_error) {
+            alert(_error);
+          }
+        });
+      }
     }
   });
 }
