@@ -166,8 +166,8 @@ function init() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/Pep/Desktop/Esercizi Boolean/php-ajax-dischi/src/js/app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! /Users/Pep/Desktop/Esercizi Boolean/php-ajax-dischi/src/style/app.scss */"./src/style/app.scss");
+__webpack_require__(/*! /Users/Marco/Desktop/Esercizi Boolean/php-ajax-dischi/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /Users/Marco/Desktop/Esercizi Boolean/php-ajax-dischi/src/style/app.scss */"./src/style/app.scss");
 
 
 /***/ })
